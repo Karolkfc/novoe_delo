@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #1a1a2e;
+    --secondary-color: #16213e;
+    --highlight-color: #0f3460;
+    --accent-color: #e94560;
+    --text-color: #ffffff;
+    --bg-color: #0d0d0d;
+    --font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+header {
+    position: fixed;
+    top: -60px; /* Скрываем заголовок за пределами верхней части экрана */
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    width: 100%;
+    box-sizing: border-box;
+    transition: top 0.3s;
+}
+
+body:hover header {
+    top: 0; /* Показываем заголовок при наведении на тело страницы */
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+    white-space: nowrap;
+}
+
+header nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+/* Стили для footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+footer .logo {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+footer nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+footer nav ul li {
+    margin: 0 15px;
+}
+
+footer nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+    white-space: nowrap;
+}
+
+footer nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+/* Стили для секций */
+section {
+    flex: 1;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-section {
+    background: linear-gradient(rgba(15, 52, 96, 0.8), rgba(233, 69, 96, 0.8)), url('https://images.unsplash.com/photo-1607756783570-16f9c0e43f4d?fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    border-radius: 0;
+    color: var(--text-color);
+    padding: 60px 30px;
+    margin: 0;
+}
+
+.animated-header {
+    animation: slideInFromLeft 1.5s ease-in-out;
+}
+
+/* Анимация для заголовка */
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Стили для новостей */
+.news-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.news-item {
+    background-color: var(--highlight-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: calc(50% - 20px); /* Для двух новостей в строку */
+    max-width: 300px;
+}
+
+.news-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.news-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.news-item h3 {
+    font-size: 20px;
+    margin: 15px;
+    color: var(--accent-color);
+}
+
+.news-item p {
+    font-size: 14px;
+    margin: 0 15px 15px;
+    color: var(--text-color);
+}
+
+.news-item .btn {
+    display: block;
+    margin: 15px;
+    padding: 10px 15px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.news-item .btn:hover {
+    background-color: darken(var(--accent-color), 10%);
+}
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 30px;
+    background: linear-gradient(rgba(15, 52, 96, 0.8), rgba(233, 69, 96, 0.8)), url('https://images.unsplash.com/photo-1522252234503-e356532cafd5');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    border-radius: 0;
+    color: var(--text-color);
+    margin: 0;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    z-index: 2;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.info-section {
+    padding: 60px 30px;
+    background-color: var(--secondary-color);
+    text-align: center;
+}
+
+.info-section h2 {
+    color: var(--accent-color);
+    margin-bottom: 40px;
+    font-size: 2em;
+}
+
+.info-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.info-item {
+    background-color: var(--highlight-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: calc(50% - 20px); /* Для двух новостей в строку */
+    max-width: 300px;
+    text-align: center;
+    padding: 20px;
+}
+
+.info-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.info-item p {
+    font-size: 1em;
+    color: var(--text-color);
+}
+
+.info-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Стили для формы обратной связи */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.contact-form label {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid var(--highlight-color);
+    border-radius: 5px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.contact-form button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: darken(var(--accent-color), 10%);
+}
